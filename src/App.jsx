@@ -7,11 +7,14 @@ import './App.css'
 function App() {
   const [history, setHistory] = useState({});
   const [banList, setBanList] = useState([]);
+  const [data, setData] = useState({});
+
   const APIRequest = async () => {
-    let result = await fetch("http://localhost:3000/recent-release")
-    .then((response) => response.json())
-    .then((animelist) => console.log(animelist));
-    console.log(result)
+    const popularAnime = await fetch("http://localhost:3000/popular")
+    if(popularAnime) {
+    const popularAnimeJSON = popularAnime.json();
+    }
+    setData({...data, animeId : popularAnimeJSON.animeID, animeTitle: popularAnimeJSON.animeTitle, animeImg: popularAnimeJSON.animeImg});
 
   }
   return (
