@@ -5,30 +5,22 @@
     flex-flow: column nowrap;
     background: url("https://i.pinimg.com/736x/a3/8e/d9/a38ed9222d312be333acc28b11b43f9a.jpg") no-repeat;
     background-size: 1000px 800px;
-    border-radius: 20px;
+    border-radius: 30px;
     justify-content: center;
+    position: relative;
+}
+
+.veni-container {
+    position: relative;
+
 }
 
 .title, .title-description {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 30px;
+    font-size: 25px;
     color: white;
     position: relative;
-    top: -30px;
-}
-
-.explore-button {
- width: 20%;
- height: 10%;
- align-self: center;    
- position: relative;
- top: -30px;
-}
-
-.query-button-container {
-    display: flex;
-    flex-flow: row nowrap;
-    gap: 20px;
+    top: 0px;
 }
 
 .query-container {
@@ -37,7 +29,36 @@
     gap: 20px;
     justify-content: center;
     align-items: center;
+    color: white;
 }
+
+.query-container p {
+    position: relative;
+    bottom: 20px;
+    margin : -5px;
+}
+
+.query-image {
+    border-radius: 10px;
+}
+
+.explore-button {
+ width: 20%;
+ height: 20%;
+ align-self: center;    
+ position: relative;
+ bottom: 5px;
+}
+
+.query-button-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+
+
 .query-image {
     width: 30%;
     height: 70%;
