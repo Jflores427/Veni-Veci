@@ -1,12 +1,28 @@
 .banList-container {
-    width: 400px;
+    width: 500px;
     height: 800px;
     color: white;
     background-color: black;   
     border-radius: 20px;
     overflow-y: auto;
+    opacity: 0.85;
+    position: relative;
+    left: 100px;
 }
 
 .banList-buttons {
     margin: 5px;
+    background-color: red;
+    color: white;
+    border: 1px solid transparent;
+}
+
+.banList-buttons:hover {
+    color: black;
+    background-color: green;
+    border: 1px solid transparent;
+}
+
+.banList-description {
+    margin: 20px;
 }

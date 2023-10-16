@@ -2,19 +2,16 @@ import { useState, useEffect } from 'react'
 import viteLogo from '/vite.svg'
 import VeniContainer from "./components/VeniContainer"
 import BanList from "./components/BanList"
+import History from  "./components/History"
 import './App.css'
 
 
-
-
 function App() {
-  const [history, setHistory] = useState({});
-  const [banList, setBanList] = useState(new Set());
+  const [history, setHistory] = useState(new Set());
+  const [banSet, setBanSet] = useState(new Set());
   const [data, setData] = useState({});
   
-  useEffect(() => {
-    
-  }, [banList]);
+
 
   const POPULAR_ANIME_PAGES = 504;
 
@@ -31,54 +28,60 @@ function App() {
     
     let animeDetailsJSON = await fetch("http://localhost:3000/anime-details/" + popularAnimeJSON[randomIndex].animeId).then((response) => response.json());
 
-    while(banList.has(...animeDetailsJSON.genres)) {
-      randomPage = getRandomInt(POPULAR_ANIME_PAGES);
-      popularAnimeJSON = await fetch("http://localhost:3000/popular?page=" + randomPage).then((response) => response.json());
-  
-      randomIndex = getRandomInt(popularAnimeJSON.length);
-      
-      animeDetailsJSON = await fetch("http://localhost:3000/anime-details/" + popularAnimeJSON[randomIndex].animeId).then((response) => response.json());
+    let genreList = animeDetailsJSON.genres;
+
+    for(let i = 0; i < genreList.length; i++) {
+      const isBanned = banSet.has(genreList[i]);
+      if(isBanned) {
+        APIRequest();
+        return;
+      }
     }
     
-    // console.log(popularAnimeJSON);
-    // console.log(animeDetailsJSON);
-    // console.log(data);
-
     if(popularAnimeJSON && animeDetailsJSON) {
-    setData({ 
-      animeId : popularAnimeJSON[randomIndex].animeId, 
-      animeTitle: popularAnimeJSON[randomIndex].animeTitle, 
-      animeImg: popularAnimeJSON[randomIndex].animeImg, 
-      animeGenres: animeDetailsJSON.genres, 
-      animeStatus: animeDetailsJSON.status, 
-      animeRelease: animeDetailsJSON.releasedDate});
+      setData({ 
+        animeId : popularAnimeJSON[randomIndex].animeId, 
+        animeTitle: popularAnimeJSON[randomIndex].animeTitle, 
+        animeImg: popularAnimeJSON[randomIndex].animeImg, 
+        animeGenres: animeDetailsJSON.genres, 
+        animeStatus: animeDetailsJSON.status, 
+        animeRelease: animeDetailsJSON.releasedDate});
     }
   
   }
 
   const AddToBanList = (e) => {
-    banList.add(e.target.id);
-    setBanList(new Set(banList));
+    banSet.add(e.target.id);
+    setBanSet(new Set(banSet));
   }
 
   const UnBan = (e) => {
-    banList.delete(e.target.id);
-    setBanList(new Set(banList));
+    banSet.delete(e.target.id);
+    setBanSet(new Set(banSet));
+  }
+
+  const AddToHistory = () => {
+    if(data)
+     history.add(data);
+     setHistory(new Set(history));
   }
 
 
 
   return (
     <div className="veni-background">
+      <History History={history} />
+
       <VeniContainer APIRequest={APIRequest} 
       AddToBanList={AddToBanList} 
-      data={data} 
+      data={data}
+      AddToHistory={AddToHistory} 
       />
-      <BanList banList={banList} UnBan={UnBan} />
+      <BanList banList={banSet} UnBan={UnBan} />
 
-      {/* <History></History> */}
+
     </div>
   )
 }
 
-export default App
+export default App;

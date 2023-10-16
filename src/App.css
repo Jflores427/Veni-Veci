@@ -48,6 +48,7 @@ body {
 .veni-background {
   display: flex;
   flex-flow: row;
-  justify-content: space-between;
-  gap: 100px;
+  justify-content: space-evenly;
+  gap: 0px;
+
 }
