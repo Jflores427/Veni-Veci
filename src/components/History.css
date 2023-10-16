@@ -2,7 +2,7 @@
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    width: 500px;
+    width: 2000px;
     height: 800px;
     color: white;
     background-color: black;
@@ -17,7 +17,16 @@
 .history-title {
     margin: 5px 0 0 0;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 20px;
+    font-size: 25px;
+    font-weight: bolder;
+    
+}
+
+.history-anime-title {
+    margin: 5px 0 0 0;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
     
 }
 

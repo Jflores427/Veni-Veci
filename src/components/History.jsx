@@ -12,7 +12,7 @@ const History = (props) => {
             {HistoryList && HistoryList.map((entry) => 
             (<div key={entry.animeId} className="history-entry" id={entry.animeId}>
                 <img className="history-img" src={entry.animeImg} />
-                <div className="history-title">{entry.animeTitle}</div>
+                <div className="history-anime-title">{entry.animeTitle}</div>
             </div>))}
         </div>
         </>

@@ -1,20 +1,36 @@
 .container {
-    width: 1000px;
+    width: 600px;
     height: 800px;
     display: flex;
     flex-flow: column nowrap;
-    background: url("https://i.pinimg.com/736x/a3/8e/d9/a38ed9222d312be333acc28b11b43f9a.jpg") no-repeat;
-    background-size: 1000px 800px;
-    border-radius: 30px;
+    /* background: url("https://i.pinimg.com/736x/a3/8e/d9/a38ed9222d312be333acc28b11b43f9a.jpg") no-repeat;
+    background-size: 1000px 800px; */
     justify-content: center;
-    margin: 0 100px;
+    margin: 0 70px;
+  
+}
+
+.veni-container {
+    width: 700px;
+    height: 800px;
+    background: url("https://i.pinimg.com/736x/a3/8e/d9/a38ed9222d312be333acc28b11b43f9a.jpg") no-repeat;
+    background-size: 700px 800px;
+    border-radius: 30px;
 }
 
 
-.title, .title-description {
+.title {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 25px;
     color: white;
+    margin: 20px 0;
+}
+
+ .title-description {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 22px;
+    color: white;
+    margin: 20px;
 }
 
 .query-container {
@@ -24,6 +40,7 @@
     justify-content: center;
     align-items: center;
     color: white;
+    margin: 20px 0 0 0;
 }
 
 .query-container p {
@@ -73,5 +90,6 @@
     width: 30%;
     height: 70%;
 }
+
 
 

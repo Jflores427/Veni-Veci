@@ -4,7 +4,7 @@ Submitted by: **Josue Flores**
 
 This web app: **A Web application that randomly selects an Anime from the GogoAnime API**
 
-Time spent: **1** hours spent in total
+Time spent: **12** hours spent in total
 
 ## Required Features
 
@@ -19,21 +19,18 @@ The following **required** functionality is completed:
 
 The following **optional** features are implemented:
 
-- [ ] Multiple types of attributes can be added to the ban list
 - [X] Users can see a stored history of their previously viewed items from their session
+- [ ] Multiple types of attributes can be added to the ban list
 
-The following **additional** features are implemented:
-
-* [ ] List anything else that you added to improve the site's functionality!
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='./public/Ven-Vici-Anime-Edition.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
+GIF created with ScreenToGif  
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows
@@ -43,7 +40,27 @@ GIF created with ...
 
 Describe any challenges encountered while building the app.
 
-- Incomplete for now.
+- Discovering a functioning Anime API
+- Creating the queries for the API
+- Styling the Main Container (VeniContainer)
+- Hosting the API
+
+For the API to work, you need to run it locally.
+
+In a directory of your choosing, run the following commands:
+
+```
+git clone https://github.com/riimuru/gogoanime.git
+cd gogoanime
+npm install #or yarn install
+```
+
+Start the server with the next command:
+```
+npm start #or yarn start
+```
+
+Now the server is running on http://localhost:3000
 
 ## License
 

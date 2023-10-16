@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import viteLogo from '/vite.svg'
 import VeniContainer from "./components/VeniContainer"
 import BanList from "./components/BanList"
-import History from  "./components/History"
+import History from "./components/History"
 import './App.css'
 
 
@@ -11,7 +11,6 @@ function App() {
   const [banSet, setBanSet] = useState(new Set());
   const [data, setData] = useState({});
   
-
 
   const POPULAR_ANIME_PAGES = 504;
 
@@ -77,11 +76,11 @@ function App() {
       data={data}
       AddToHistory={AddToHistory} 
       />
-      <BanList banList={banSet} UnBan={UnBan} />
-
-
+      <BanList 
+      banList={banSet} 
+      UnBan={UnBan} />
     </div>
-  )
-}
+  );
+};
 
 export default App;
